@@ -3,6 +3,7 @@ package com.atlantis.mobile_API;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/sensors")
@@ -20,6 +21,12 @@ public class SensorController {
 
         return this.sensorRepository.findAll();
 
+    }
+
+    @CrossOrigin
+    @GetMapping("/{id}")
+    public Sensor findById(@PathVariable long id){
+        return this.sensorRepository.findById(id);
     }
 
     @CrossOrigin

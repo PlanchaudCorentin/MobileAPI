@@ -37,4 +37,11 @@ public class DeviceController {
         System.out.println(newDevice);
         return deviceRepository.save(newDevice);
     }
+
+    @CrossOrigin
+    @GetMapping("/macFromId/{id}")
+    public String findMacById(@PathVariable Long id) {
+
+        return this.deviceRepository.findById(id).get().getMac_address();
+    }
 }

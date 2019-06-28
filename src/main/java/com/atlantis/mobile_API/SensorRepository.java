@@ -9,4 +9,5 @@ import java.util.List;
 
 public interface SensorRepository extends JpaRepository<Sensor, Long> {
     List<Sensor> findByDeviceId(Integer deviceId);
+    Sensor findById(long id);
 }
